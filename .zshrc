@@ -1,6 +1,18 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/ssprouse/.oh-my-zsh
 
+is_cygwin() {
+  local uname
+  # Check we're running under cygwin
+  uname=`uname -s`
+  [[ $uname[0,6] == 'CYGWIN' ]]
+}
+
+is_not_cygwin() {
+  is_cygwin
+  [[ "$?" == "1" ]]
+}
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -54,7 +66,13 @@ plugins=(gitfast)
 
 # User configuration
 
-export PATH="/cygdrive/c/Python34:/cygdrive/c/Python34/Scripts:/cygdrive/c/Program Files/TortoiseHg:/usr/local/bin:/usr/bin:/cygdrive/c/windows/system32:/cygdrive/c/windows:/cygdrive/c/windows/System32/Wbem:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Program Files (x86)/Microsoft Application Virtualization Client:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Program Files/Collaborator Client:/cygdrive/c/Users/ssprouse/Documents/My Programs/lmtools:/cygdrive/c/Users/ssprouse/Cygwin_Home/opt/bin:/cygdrive/c/Users/ssprouse/Documents/My Programs/ffmpeg-20150519-git-d0ac2f5-win64-static/bin:~/opt/bin"
+#Use different paths for cygwin vs. linux
+if is_cygwin; then
+	export PATH="/cygdrive/c/Python34:/cygdrive/c/Python34/Scripts:/cygdrive/c/Program Files/TortoiseHg:/usr/local/bin:/usr/bin:/cygdrive/c/windows/system32:/cygdrive/c/windows:/cygdrive/c/windows/System32/Wbem:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Program Files (x86)/Microsoft Application Virtualization Client:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Program Files/Collaborator Client:/cygdrive/c/Users/ssprouse/Documents/My Programs/lmtools:/cygdrive/c/Users/ssprouse/Cygwin_Home/opt/bin:/cygdrive/c/Users/ssprouse/Documents/My Programs/ffmpeg-20150519-git-d0ac2f5-win64-static/bin:~/opt/bin"
+else
+	export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ssprouse/opt/bin"
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
