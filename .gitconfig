@@ -1,0 +1,11 @@
+[user]
+	email = ssprouse@sandisk.com
+	name = Steven Sprouse
+
+[alias]
+	lc = log --color=always
+	last = log -1 HEAD
+	ls = log --oneline
+	lsd = log --decorate
+[push]
+	default = simple
