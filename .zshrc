@@ -109,12 +109,16 @@ alias hg='echo "stop using hg!"'
 alias ls='ls --color=auto'
 
 
-. ~/venv/py3/bin/activate
 
 #############  ESS-ARCH-Alpine Specific #############
-if hostname="ess-arch-alpine";
-then
+if [ "$HOSTNAME" = "ess-arch-alpine" ]; then
     echo "This is alpine"
     alias mdstat='sudo megaraidsas-status'
     alias raidstat='sudo megaraidsas-status'
+    . ~/venv/py3/bin/activate
+fi
+
+#############  HQE201826 Specific #############
+if [ "$HOSTNAME" = "HQE201826" ]; then
+    echo "This is HQE201826"
 fi
