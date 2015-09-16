@@ -111,11 +111,12 @@ alias ls='ls --color=auto'
 
 
 #############  ESS-ARCH-Alpine Specific #############
-if [ "$HOSTNAME" = "ess-arch-alpine" ]; then
+if [ `hostname` = "ess-arch-alpine" ]; then
     echo "This is alpine"
     alias mdstat='sudo megaraidsas-status'
     alias raidstat='sudo megaraidsas-status'
     . ~/venv/py3/bin/activate
+    export PATH=$PATH:/opt/gcc-arm-none-eabi-4_9-2015q2/bin/
 fi
 
 #############  HQE201826 Specific #############
