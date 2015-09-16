@@ -110,3 +110,11 @@ alias ls='ls --color=auto'
 
 
 . ~/venv/py3/bin/activate
+
+#############  ESS-ARCH-Alpine Specific #############
+if hostname="ess-arch-alpine";
+then
+    echo "This is alpine"
+    alias mdstat='sudo megaraidsas-status'
+    alias raidstat='sudo megaraidsas-status'
+fi
