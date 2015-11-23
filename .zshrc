@@ -68,7 +68,7 @@ plugins=(gitfast)
 
 #Use different paths for cygwin vs. linux
 if is_cygwin; then
-	export PATH="/cygdrive/c/Python34:/cygdrive/c/Python34/Scripts:/cygdrive/c/Program Files/TortoiseHg:/usr/local/bin:/usr/bin:/cygdrive/c/windows/system32:/cygdrive/c/windows:/cygdrive/c/windows/System32/Wbem:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Program Files (x86)/Microsoft Application Virtualization Client:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Program Files/Collaborator Client:/cygdrive/c/Users/ssprouse/Documents/My Programs/lmtools:/cygdrive/c/Users/ssprouse/Cygwin_Home/opt/bin:/cygdrive/c/Users/ssprouse/Documents/My Programs/ffmpeg-20150519-git-d0ac2f5-win64-static/bin:~/opt/bin"
+	export PATH="/cygdrive/c/Python34:/cygdrive/c/Python34/Scripts:/cygdrive/c/Program Files/TortoiseHg:/usr/local/bin:/usr/bin:/cygdrive/c/windows/system32:/cygdrive/c/windows:/cygdrive/c/windows/System32/Wbem:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Program Files (x86)/Microsoft Application Virtualization Client:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Program Files/Collaborator Client:/cygdrive/c/Users/ssprouse/Documents/My Programs/lmtools:/cygdrive/c/Users/ssprouse/Cygwin_Home/opt/bin:/cygdrive/c/Users/ssprouse/Documents/My Programs/ffmpeg-20150519-git-d0ac2f5-win64-static/bin:~/opt/bin:/cygdrive/c/ProgramData/chocolatey/bin"
 else
 	export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/ssprouse/opt/bin"
 fi
@@ -121,4 +121,5 @@ fi
 #############  HQE201826 Specific #############
 if [ "$HOSTNAME" = "HQE201826" ]; then
     echo "This is HQE201826"
+    eval `dircolors ~/.dir_colors/dircolors.256dark`
 fi
